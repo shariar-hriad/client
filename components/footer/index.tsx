@@ -29,7 +29,7 @@ const index = () => {
                         </h4>
                         <ul className='space-y-4'>
                             {headerLinks.map((link) => (
-                                <li key={link.id} className='text-base'>
+                                <li key={link.name} className='text-base'>
                                     <Link href={link.route}>{link.name}</Link>
                                 </li>
                             ))}
@@ -42,7 +42,7 @@ const index = () => {
                         </h4>
                         <ul className='space-y-4'>
                             {footerLinks.map((link) => (
-                                <li key={link.id} className='text-base'>
+                                <li key={link.name} className='text-base'>
                                     <Link href={link.route}>{link.name}</Link>
                                 </li>
                             ))}

@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const ShareSetup = () => {
     return (
         <section className='py-[30px] lg:py-[50px]'>
@@ -10,6 +12,15 @@ const ShareSetup = () => {
                         #FuniroFurniture
                     </h2>
                 </div>
+            </div>
+            <div>
+                <Image
+                    src='/furniture-grid-image.png'
+                    alt='furnitures'
+                    width={1440}
+                    height={721}
+                    className='w-full'
+                />
             </div>
         </section>
     )

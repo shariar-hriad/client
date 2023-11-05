@@ -30,9 +30,9 @@ const ProductCard = ({
     const [isHovered, setIsHovered] = useState<boolean>(false)
 
     return (
-        <Card className='overflow-hidden border-none shadow-none rounded-none bg-[#F4F5F7] relative z-0'>
+        <div className='overflow-hidden border-none shadow-none rounded-none bg-[#F4F5F7] relative z-0'>
             {/* ========== CARD HEADER START ========== */}
-            <CardHeader className='p-0 overflow-hidden relative z-0'>
+            <div className='p-0 overflow-hidden relative z-0'>
                 <Image
                     src={`${imageUrl ? imageUrl : '/product-1.png'}`}
                     alt={title}
@@ -45,15 +45,15 @@ const ProductCard = ({
                 <div className='absolute top-5 right-5 w-12 h-12 rounded-full bg-[#E97171] flex items-center justify-center text-sm font-medium text-white'>
                     -30%
                 </div>
-            </CardHeader>
+            </div>
             {/* ========== CARD HEADER END ========== */}
 
             {/* ========== CARD CONTENT START ========== */}
-            <CardContent className='space-y-1 pt-3'>
-                <CardTitle className='text-2xl text-gray-800'>
+            <div className='space-y-1 p-4'>
+                <h3 className='text-2xl text-gray-800 font-semibold'>
                     {title}
-                </CardTitle>
-                <CardDescription className='space-y-1'>
+                </h3>
+                <div className='space-y-1'>
                     <p>{description}</p>
                     <div className='flex items-center justify-between gap-2'>
                         <span className='font-semibold text-gray-800 text-base'>
@@ -63,14 +63,17 @@ const ProductCard = ({
                             Rp:&nbsp;3,498.000
                         </span>
                     </div>
-                </CardDescription>
-            </CardContent>
+                </div>
+            </div>
             {/* ========== CARD CONTENT END ========== */}
 
             {/* ========== HOVER STATE START ========== */}
             <motion.div
                 initial={{ opacity: 0 }}
                 whileHover={{
+                    opacity: 1,
+                }}
+                whileTap={{
                     opacity: 1,
                 }}
                 exit={{ opacity: 0 }}
@@ -108,7 +111,7 @@ const ProductCard = ({
                 </div>
             </motion.div>
             {/* ========== HOVER STATE END ========== */}
-        </Card>
+        </div>
     )
 }
 

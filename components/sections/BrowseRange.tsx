@@ -20,7 +20,7 @@ const BrowseRange = () => {
                     {ranges &&
                         ranges.map((range) => (
                             <RangeCard
-                                key={range.id}
+                                key={range.title}
                                 image={range.url}
                                 title={range.title}
                             />

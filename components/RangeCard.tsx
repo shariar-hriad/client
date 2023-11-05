@@ -15,20 +15,20 @@ type RangeCardProp = {
 
 const RangeCard = ({ title, image }: RangeCardProp) => {
     return (
-        <Card className='border-none shadow-none p-0 overflow-hidden group cursor-pointer'>
-            <CardHeader className='p-0 overflow-hidden'>
+        <div className='border-none shadow-none p-0 overflow-hidden group cursor-pointer rounded-md'>
+            <div className='p-0 overflow-hidden rounded-md'>
                 <Image
                     src={`${image ? image : '/range-1.png'}`}
                     alt='living'
                     width={381}
                     height={480}
-                    className='w-full group-hover:scale-110 transition duration-300'
+                    className='w-full group-hover:scale-110 group-hover:grayscale transition duration-300'
                 />
-            </CardHeader>
-            <CardTitle className='text-center font-semibold text-2xl py-4'>
+            </div>
+            <h3 className='text-center font-semibold text-2xl py-4'>
                 {title || 'Give a Title'}
-            </CardTitle>
-        </Card>
+            </h3>
+        </div>
     )
 }
 

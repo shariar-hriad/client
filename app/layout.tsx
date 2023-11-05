@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang='en'>
-            <body className='font-poppins'>
+            <body className='font-poppins' suppressHydrationWarning>
                 <Header />
                 <main>{children}</main>
                 <Footer />

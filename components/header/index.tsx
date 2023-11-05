@@ -22,7 +22,7 @@ const index = () => {
                     <nav className='px-3 flex-1 hidden lg:block'>
                         <ul className='flex gap-5 justify-center'>
                             {headerLinks.map((link) => (
-                                <li key={link.id}>
+                                <li key={link.name}>
                                     <Link href={link.route}>{link.name}</Link>
                                 </li>
                             ))}
