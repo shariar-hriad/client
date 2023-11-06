@@ -5,15 +5,10 @@ import Link from 'next/link'
 
 const BreadCrumb = () => {
     const pathname = usePathname()
-    const splitedPath = pathname?.split('/')
-    const routes = splitedPath?.slice(1)
-
-    console.log(routes)
-
-    const lastSegment = routes?.[routes?.length - 1] || false
+    const segments = pathname?.split('/').filter((segment) => segment !== '')
 
     return (
-        <div className='px-3'>
+        <div className='py-3'>
             <ul className='flex items-center gap-2'>
                 <li className='text-base text-gray-700 capitalize'>
                     <Link
@@ -36,19 +31,7 @@ const BreadCrumb = () => {
                         </svg>
                     </Link>
                 </li>
-                {routes?.map((link) => {
-                    if (lastSegment) {
-                        return (
-                            <Link
-                                key={link}
-                                href={`/${link}`}
-                                className='flex items-center justify-start gap-1'
-                            >
-                                <span>{link}</span>
-                            </Link>
-                        )
-                    }
-
+                {segments?.map((link, index) => {
                     return (
                         <li
                             key={link}
@@ -59,7 +42,7 @@ const BreadCrumb = () => {
                                 className='flex items-center justify-start gap-1'
                             >
                                 <span>{link}</span>
-                                {lastSegment && (
+                                {index !== segments.length - 1 && (
                                     <svg
                                         xmlns='http://www.w3.org/2000/svg'
                                         viewBox='0 0 20 20'
