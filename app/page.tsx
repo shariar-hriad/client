@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import {
     Banner,
     BrowseRange,
@@ -6,7 +7,12 @@ import {
     ShareSetup,
 } from '@/components/sections'
 
-export default function Home() {
+export const metadata: Metadata = {
+    title: 'Furniro - Home',
+    description: 'A Modern Ineterior Website',
+}
+
+export default async function Home() {
     return (
         <>
             <Banner />

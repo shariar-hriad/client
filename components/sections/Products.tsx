@@ -23,17 +23,34 @@ const Products = () => {
                 </div>
                 {/* ========== PRODUCTS GRID END =========== */}
 
-                {/* ========== SEE MORE BUTTON START =========== */}
-                <div className='mt-8 flex justify-center'>
+                {/* ========== PAGINATION START =========== */}
+                <div className='mt-8 flex items-center gap-3 justify-center'>
+                    <Button
+                        className='border-primary hover:text-primary bg-primary dark:hover:bg-gray-100 text-white dark:text-white dark:border-gray-400'
+                        variant='outline'
+                    >
+                        1
+                    </Button>
                     <Button
                         className='border-primary hover:text-white hover:bg-primary dark:hover:bg-gray-100 text-primary dark:text-white dark:border-gray-400'
                         variant='outline'
-                        size='default'
                     >
-                        Show More
+                        2
+                    </Button>
+                    <Button
+                        className='border-primary hover:text-white hover:bg-primary dark:hover:bg-gray-100 text-primary dark:text-white dark:border-gray-400'
+                        variant='outline'
+                    >
+                        3
+                    </Button>
+                    <Button
+                        className='border-primary hover:text-white hover:bg-primary dark:hover:bg-gray-100 text-primary dark:text-white dark:border-gray-400'
+                        variant='outline'
+                    >
+                        Next
                     </Button>
                 </div>
-                {/* ========== SEE MORE BUTTON END =========== */}
+                {/* ========== PAGINATION END =========== */}
             </div>
         </section>
     )
