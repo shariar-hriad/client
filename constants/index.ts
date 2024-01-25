@@ -19,6 +19,11 @@ export const headerLinks = [
         route: '/contact',
         name: 'Contact',
     },
+    {
+        id: 5,
+        route: '/auth',
+        name: 'Login / Sign Up',
+    },
 ]
 
 export const footerLinks = [

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
-import Header from '@/components/header'
 import Footer from '@/components/footer'
+import Header from '@/components/header'
 
-import './globals.css'
+import '@/app/globals.css'
 
 export const metadata: Metadata = {
     title: 'Furniro',

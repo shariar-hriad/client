@@ -1,12 +1,12 @@
-import { ranges } from '@/constants'
-import RangeCard from '../RangeCard'
+import { ranges } from '@/constants';
+import RangeCard from '../RangeCard';
 
 const BrowseRange = () => {
     return (
         <section className='py-5 lg:py-10'>
             <div className='container'>
-                <div className='text-center max-w-2xl mx-auto'>
-                    <h2 className='font-semibold text-3xl lg:text-5xl mb-3 lg:mb-5 text-[#333333] dark:text-white'>
+                <div className='mx-auto max-w-2xl text-center'>
+                    <h2 className='mb-3 text-3xl font-semibold text-[#333333] dark:text-white lg:mb-5 lg:text-5xl'>
                         Browse The Range
                     </h2>
                     <p className='text-base text-[#333333]'>
@@ -16,7 +16,7 @@ const BrowseRange = () => {
                     </p>
                 </div>
 
-                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-10'>
+                <div className='mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3'>
                     {ranges &&
                         ranges.map((range) => (
                             <RangeCard
@@ -28,7 +28,7 @@ const BrowseRange = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default BrowseRange
+export default BrowseRange;

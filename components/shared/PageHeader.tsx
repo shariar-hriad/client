@@ -9,7 +9,7 @@ type PageHeaderProps = {
 const PageHeader = ({ title }: PageHeaderProps) => {
     return (
         <div
-            className='flex items-center justify-center py-[40px] lg:py-[80px] relative z-[1]'
+            className='relative z-[1] flex items-center justify-center py-[40px] lg:py-[80px]'
             style={{
                 background: 'url("/pageheader-bg.png")',
                 backgroundSize: 'cover',
@@ -17,13 +17,14 @@ const PageHeader = ({ title }: PageHeaderProps) => {
                 backgroundRepeat: 'no-repeat',
             }}
         >
-            <div className='text-center py-5 relative z-10 space-y-3'>
-                <h3 className='text-gray-800 capitalize font-semibold text-2xl lg:text-5xl tracking-wide'>
+            <div className='relative z-10 space-y-3 py-5 text-center'>
+                <h3 className='text-2xl font-semibold capitalize tracking-wide text-gray-800 lg:text-5xl'>
                     {title}
                 </h3>
                 <BreadCrumb />
             </div>
-            <div className='bg-white/20 backdrop-blur-sm absolute inset-0 -z-0' />
+
+            <div className='absolute inset-0 -z-0 bg-white/20 backdrop-blur-sm' />
         </div>
     )
 }

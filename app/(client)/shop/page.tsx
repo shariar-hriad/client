@@ -1,7 +1,7 @@
-import { Fragment } from 'react'
-import { PageHeader, Support } from '@/components/shared'
 import FilterBar from '@/components/FilterBar'
 import { Products } from '@/components/sections'
+import { PageHeader, Support } from '@/components/shared'
+import { Fragment } from 'react'
 
 const Page = () => {
     return (

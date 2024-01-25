@@ -1,54 +1,61 @@
-import { headerLinks } from '@/constants'
-import { UserX, Search, Heart, ShoppingCart } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
+'use client'
 
-const index = () => {
+import Logo from '@/components/Logo'
+import { Heart, Search, UserX } from 'lucide-react'
+import { useState } from 'react'
+import Cart from '../Cart'
+import { Button } from '../ui/button'
+import MobileMenu from './mobile-menu'
+import { Navigation } from './navigation'
+import SearchBar from './search'
+
+const Index = () => {
+    const [showSearch, setShowSearch] = useState<boolean>(false)
+
     return (
-        <header className='bg-background py-4 px-2'>
+        <header className='sticky top-0 z-20 w-full bg-background/30 px-2 py-4 shadow backdrop-blur-md transition duration-300'>
             <div className='container'>
                 <div className='flex items-center justify-between'>
-                    <div className='px-1'>
-                        <Link href='/'>
-                            <Image
-                                src='/logo.png'
-                                alt='Furniro'
-                                width={185}
-                                height={41}
-                            />
-                        </Link>
-                    </div>
+                    <Logo />
 
-                    <nav className='px-3 flex-1 hidden lg:block'>
-                        <ul className='flex gap-5 justify-center'>
-                            {headerLinks.map((link) => (
-                                <li key={link.name}>
-                                    <Link href={link.route}>{link.name}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
+                    <Navigation />
 
                     <div className='px-1'>
-                        <ul className='flex gap-5'>
+                        <ul className='flex gap-1'>
                             <li>
-                                <UserX className='w-5' />
+                                <Button size='icon' variant='outline'>
+                                    <UserX className='h-5 w-5 text-primary' />
+                                </Button>
                             </li>
                             <li>
-                                <Search className='w-5' />
+                                <Button
+                                    onClick={() => setShowSearch(true)}
+                                    size='icon'
+                                    variant='outline'
+                                >
+                                    <Search className='h-5 w-5 text-primary' />
+                                </Button>
                             </li>
                             <li>
-                                <Heart className='w-5' />
+                                <Button size='icon' variant='outline'>
+                                    <Heart className='h-5 w-5 text-primary' />
+                                </Button>
                             </li>
                             <li>
-                                <ShoppingCart className='w-5' />
+                                <Cart />
+                            </li>
+                            <li className='lg:hidden'>
+                                <MobileMenu />
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+
+            {/* Search Bar */}
+            <SearchBar showSearch={showSearch} setShowSearch={setShowSearch} />
         </header>
     )
 }
 
-export default index
+export default Index

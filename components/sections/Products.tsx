@@ -1,20 +1,20 @@
-import ProductCard from '../ProductCard'
-import { Button } from '../ui/button'
+import ProductCard from '@/components/ProductCard'
+import { Button } from '@/components/ui/button'
 
 const Products = () => {
     return (
         <section className='py-5 lg:py-10'>
             <div className='container'>
                 {/* ========== SECTION TITLE START =========== */}
-                <div className='text-center max-w-2xl mx-auto'>
-                    <h2 className='font-semibold text-3xl lg:text-5xl mb-3 lg:mb-5 text-[#333333] dark:text-white'>
+                <div className='mx-auto max-w-2xl text-center'>
+                    <h2 className='mb-3 text-3xl font-semibold text-[#333333] dark:text-white lg:mb-5 lg:text-5xl'>
                         Our Products
                     </h2>
                 </div>
                 {/* ========== SECTION TITLE END =========== */}
 
                 {/* ========== PRODUCTS GRID START =========== */}
-                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10'>
+                <div className='mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
                     <ProductCard
                         title='Syletherine'
                         description='Stylish cafe chair'
@@ -24,31 +24,8 @@ const Products = () => {
                 {/* ========== PRODUCTS GRID END =========== */}
 
                 {/* ========== PAGINATION START =========== */}
-                <div className='mt-8 flex items-center gap-3 justify-center'>
-                    <Button
-                        className='border-primary hover:text-primary bg-primary dark:hover:bg-gray-100 text-white dark:text-white dark:border-gray-400'
-                        variant='outline'
-                    >
-                        1
-                    </Button>
-                    <Button
-                        className='border-primary hover:text-white hover:bg-primary dark:hover:bg-gray-100 text-primary dark:text-white dark:border-gray-400'
-                        variant='outline'
-                    >
-                        2
-                    </Button>
-                    <Button
-                        className='border-primary hover:text-white hover:bg-primary dark:hover:bg-gray-100 text-primary dark:text-white dark:border-gray-400'
-                        variant='outline'
-                    >
-                        3
-                    </Button>
-                    <Button
-                        className='border-primary hover:text-white hover:bg-primary dark:hover:bg-gray-100 text-primary dark:text-white dark:border-gray-400'
-                        variant='outline'
-                    >
-                        Next
-                    </Button>
+                <div className='mt-8 flex justify-center'>
+                    <Button variant='outline'>See More</Button>
                 </div>
                 {/* ========== PAGINATION END =========== */}
             </div>

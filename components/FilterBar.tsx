@@ -1,35 +1,35 @@
-import { LayoutGrid, List, SlidersHorizontal } from 'lucide-react'
+import { LayoutGrid, List, SlidersHorizontal } from 'lucide-react';
 
-import { Button } from './ui/button'
+import { Button } from './ui/button';
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from '@/components/ui/select'
+} from '@/components/ui/select';
 
 const FilterBar = () => {
     return (
         <div className='bg-[#F9F1E7] py-2 lg:py-4'>
             <div className='container'>
-                <div className='flex items-center justify-between'>
+                <div className='flex flex-col lg:flex-row lg:items-center lg:justify-between'>
                     <div className='flex items-center gap-2'>
-                        <Button className='bg-transparent gap-2 p-2 lg:p-2'>
-                            <SlidersHorizontal className='text-black w-5 h-5' />
-                            <span className='text-black text-xl'>Filter</span>
+                        <Button className='gap-2 bg-transparent p-2 lg:p-2'>
+                            <SlidersHorizontal className='h-5 w-5 text-black' />
+                            <span className='text-xl text-black'>Filter</span>
                         </Button>
 
                         <Button className='bg-transparent p-2 lg:p-2'>
-                            <LayoutGrid className='text-black w-5 h-5' />
+                            <LayoutGrid className='h-5 w-5 text-black' />
                             <span className='sr-only'>Grid View</span>
                         </Button>
 
                         <Button className='bg-transparent p-2 lg:p-2'>
-                            <List className='text-black w-5 h-5' />
+                            <List className='h-5 w-5 text-black' />
                             <span className='sr-only'>List View</span>
                         </Button>
-                        <span className='text-black text-base'>
+                        <span className='text-base text-black'>
                             Showing 1-16 of 32 results
                         </span>
                     </div>
@@ -69,7 +69,7 @@ const FilterBar = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default FilterBar
+export default FilterBar;

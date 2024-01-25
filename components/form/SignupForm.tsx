@@ -1,17 +1,17 @@
-'use client'
+'use client';
 
-import * as z from 'zod'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Form, FormControl, FormField, FormItem, FormLabel } from '../ui/form'
-import { Input } from '../ui/input'
-import { Button } from '../ui/button'
+import * as z from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Form, FormControl, FormField, FormItem, FormLabel } from '../ui/form';
+import { Input } from '../ui/input';
+import { Button } from '../ui/button';
 
 const SigninFormSchema = z.object({
     username: z.string(),
     email: z.string().email(),
     password: z.string(),
-})
+});
 
 const SignupForm = () => {
     const form = useForm<z.infer<typeof SigninFormSchema>>({
@@ -21,11 +21,11 @@ const SignupForm = () => {
             email: '',
             password: '',
         },
-    })
+    });
 
     const onSubmit = (values: z.infer<typeof SigninFormSchema>) => {
-        console.log(values)
-    }
+        console.log(values);
+    };
 
     return (
         <Form {...form}>
@@ -84,7 +84,7 @@ const SignupForm = () => {
                 <Button type='submit'>Sign Up</Button>
             </form>
         </Form>
-    )
-}
+    );
+};
 
-export default SignupForm
+export default SignupForm;

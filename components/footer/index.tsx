@@ -1,14 +1,14 @@
-import { headerLinks, footerLinks } from '@/constants'
-import Image from 'next/image'
-import Link from 'next/link'
-import Newsletter from './Newsletter'
+import { headerLinks, footerLinks } from '@/constants';
+import Image from 'next/image';
+import Link from 'next/link';
+import Newsletter from './Newsletter';
 
 const index = () => {
     return (
-        <footer className='border-t pt-[30px] pb-5 border-b'>
+        <footer className='border-b border-t pb-5 pt-[30px]'>
             <div className='container'>
                 <div className='grid grid-cols-1 sm:grid-cols-2 sm:gap-2 md:grid-cols-3 lg:grid-cols-4'>
-                    <div className='py-3 space-y-2'>
+                    <div className='space-y-2 py-3'>
                         <Link href='/'>
                             <Image
                                 src='/logo.png'
@@ -17,14 +17,14 @@ const index = () => {
                                 height={41}
                             />
                         </Link>
-                        <address className='text-[#9F9F9F] text-base'>
+                        <address className='text-base text-[#9F9F9F]'>
                             400 University Drive Suite 200 Coral Gables, FL
                             33134 USA
                         </address>
                     </div>
 
-                    <div className='py-3 space-y-3'>
-                        <h4 className='text-[#9F9F9F] text-base font-normal'>
+                    <div className='space-y-3 py-3'>
+                        <h4 className='text-base font-normal text-[#9F9F9F]'>
                             Links
                         </h4>
                         <ul className='space-y-4'>
@@ -36,8 +36,8 @@ const index = () => {
                         </ul>
                     </div>
 
-                    <div className='py-3 space-y-3'>
-                        <h4 className='text-[#9F9F9F] text-base font-normal'>
+                    <div className='space-y-3 py-3'>
+                        <h4 className='text-base font-normal text-[#9F9F9F]'>
                             Help
                         </h4>
                         <ul className='space-y-4'>
@@ -49,8 +49,8 @@ const index = () => {
                         </ul>
                     </div>
 
-                    <div className='py-3 space-y-3'>
-                        <h4 className='text-[#9F9F9F] text-base font-normal'>
+                    <div className='space-y-3 py-3'>
+                        <h4 className='text-base font-normal text-[#9F9F9F]'>
                             Newsletter
                         </h4>
                         <Newsletter />
@@ -61,7 +61,7 @@ const index = () => {
                 <p className=''>&copy; furino. All rights reversed</p>
             </div>
         </footer>
-    )
-}
+    );
+};
 
-export default index
+export default index;

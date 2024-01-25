@@ -1,14 +1,15 @@
 'use client'
 
-import * as z from 'zod'
-import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import axios from 'axios'
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
+import { Button } from '../ui/button'
 import { Form, FormControl, FormField, FormItem, FormLabel } from '../ui/form'
 import { Input } from '../ui/input'
-import { Button } from '../ui/button'
 
 const SigninFormSchema = z.object({
-    username: z.string(),
+    email: z.string().email(),
     password: z.string(),
 })
 
@@ -16,13 +17,19 @@ const SigninForm = () => {
     const form = useForm<z.infer<typeof SigninFormSchema>>({
         resolver: zodResolver(SigninFormSchema),
         defaultValues: {
-            username: '',
+            email: '',
             password: '',
         },
     })
 
-    const onSubmit = (values: z.infer<typeof SigninFormSchema>) => {
-        console.log(values)
+    const onSubmit = async (values: z.infer<typeof SigninFormSchema>) => {
+        const response = await axios.post(
+            'http://localhost:3001/api/v1/auth/login',
+            values,
+            {
+                withCredentials: true,
+            }
+        )
     }
 
     return (
@@ -30,13 +37,13 @@ const SigninForm = () => {
             <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
                 <FormField
                     control={form.control}
-                    name='username'
+                    name='email'
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Username</FormLabel>
+                            <FormLabel>Email</FormLabel>
                             <FormControl>
                                 <Input
-                                    type='text'
+                                    type='email'
                                     placeholder='Enter your username'
                                     {...field}
                                 />

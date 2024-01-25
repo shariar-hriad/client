@@ -1,16 +1,21 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
-const BreadCrumb = () => {
+type BreadCrumbType = {
+    className?: string
+}
+
+const BreadCrumb = ({ className }: BreadCrumbType) => {
     const pathname = usePathname()
     const segments = pathname?.split('/').filter((segment) => segment !== '')
 
     return (
-        <div className='py-3'>
+        <div className={cn('py-3', className)}>
             <ul className='flex items-center gap-2'>
-                <li className='text-base text-gray-700 capitalize'>
+                <li className='text-base capitalize text-gray-700'>
                     <Link
                         className='flex items-center justify-start gap-1'
                         href='/'
@@ -21,7 +26,7 @@ const BreadCrumb = () => {
                             viewBox='0 0 20 20'
                             fill='currentColor'
                             aria-hidden='true'
-                            className='shrink-0 w-6 h-6'
+                            className='h-6 w-6 shrink-0'
                         >
                             <path
                                 fillRule='evenodd'
@@ -31,11 +36,12 @@ const BreadCrumb = () => {
                         </svg>
                     </Link>
                 </li>
+
                 {segments?.map((link, index) => {
                     return (
                         <li
                             key={link}
-                            className='text-base text-gray-700 capitalize'
+                            className='text-base capitalize text-gray-700'
                         >
                             <Link
                                 href={`/${link}`}
@@ -48,7 +54,7 @@ const BreadCrumb = () => {
                                         viewBox='0 0 20 20'
                                         fill='currentColor'
                                         aria-hidden='true'
-                                        className='shrink-0 w-6 h-6'
+                                        className='h-6 w-6 shrink-0'
                                     >
                                         <path
                                             fillRule='evenodd'
