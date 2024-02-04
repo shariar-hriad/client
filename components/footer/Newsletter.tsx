@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import * as z from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
 
-import { Form, FormControl, FormField, FormItem } from '../ui/form';
-import { Input } from '../ui/input';
-import { Button } from '../ui/button';
+import { Button } from '../ui/button'
+import { Form, FormControl, FormField, FormItem } from '../ui/form'
+import { Input } from '../ui/input'
 
 const NewsLetterSchema = z.object({
     email: z.string().email(),
-});
+})
 
 const Newsletter = () => {
     const form = useForm<z.infer<typeof NewsLetterSchema>>({
@@ -18,11 +18,11 @@ const Newsletter = () => {
         defaultValues: {
             email: '',
         },
-    });
+    })
 
     const onSubmit = (values: z.infer<typeof NewsLetterSchema>) => {
-        console.log(values);
-    };
+        console.log(values)
+    }
 
     return (
         <Form {...form}>
@@ -45,12 +45,12 @@ const Newsletter = () => {
                         </FormItem>
                     )}
                 />
-                <Button className='px-2 lg:px-2' type='submit'>
+                <Button variant='outline' type='submit'>
                     Subscribe
                 </Button>
             </form>
         </Form>
-    );
-};
+    )
+}
 
-export default Newsletter;
+export default Newsletter

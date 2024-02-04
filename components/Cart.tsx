@@ -1,6 +1,6 @@
 import CartItem from '@/components/CartItem'
 import { Badge } from '@/components/ui/badge'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import {
     Sheet,
@@ -61,23 +61,29 @@ const Cart = () => {
                     </SheetClose>
 
                     <SheetClose asChild>
-                        <Button
-                            className='text-primary'
-                            size='sm'
-                            variant='outline'
+                        <Link
+                            className={buttonVariants({
+                                variant: 'outline',
+                                size: 'sm',
+                                className: 'text-primary',
+                            })}
+                            href='/checkout'
                         >
                             Checkout
-                        </Button>
+                        </Link>
                     </SheetClose>
 
                     <SheetClose>
-                        <Button
-                            className='text-primary'
-                            size='sm'
-                            variant='outline'
+                        <Link
+                            className={buttonVariants({
+                                variant: 'outline',
+                                size: 'sm',
+                                className: 'text-primary',
+                            })}
+                            href='/comparision'
                         >
                             Comparision
-                        </Button>
+                        </Link>
                     </SheetClose>
                 </SheetFooter>
             </SheetContent>

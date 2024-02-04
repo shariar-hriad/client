@@ -25,8 +25,8 @@ const Banner = () => {
                             elit. Dolor nobis sapiente officia iste reiciendis
                             nisi.
                         </p>
-                        <Button className='h-[45px] rounded-none text-sm font-bold uppercase lg:h-[60px]'>
-                            buy now
+                        <Button variant='outline' size='lg'>
+                            Buy now
                         </Button>
                     </div>
                 </div>

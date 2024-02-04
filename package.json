@@ -33,6 +33,7 @@
         "slick-carousel": "^1.8.1",
         "tailwind-merge": "^2.0.0",
         "tailwindcss-animate": "^1.0.7",
+        "twin.macro": "^3.4.1",
         "vaul": "^0.8.7",
         "zod": "^3.22.4"
     },

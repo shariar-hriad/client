@@ -1,15 +1,16 @@
+import { Button, buttonVariants } from '@/components/ui/button'
 import {
     Sheet,
+    SheetClose,
     SheetContent,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet'
 import { headerLinks } from '@/constants'
-import { Menu } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { buttonVariants } from '../ui/button'
 
 const MobileMenu = () => {
     return (
@@ -23,7 +24,7 @@ const MobileMenu = () => {
             <SheetContent>
                 <SheetHeader className='px-2 py-4'>
                     <SheetTitle>
-                        <div className='px-1'>
+                        <div className='flex items-center justify-between gap-2 px-1'>
                             <Link href='/'>
                                 <Image
                                     src='/logo.png'
@@ -32,6 +33,11 @@ const MobileMenu = () => {
                                     height={41}
                                 />
                             </Link>
+                            <SheetClose asChild>
+                                <Button variant='outline' size='icon'>
+                                    <X className='h-5 w-5' />
+                                </Button>
+                            </SheetClose>
                         </div>
                     </SheetTitle>
                 </SheetHeader>

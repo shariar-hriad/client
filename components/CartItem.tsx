@@ -11,6 +11,7 @@ const CartItem = () => {
                     alt='furniture 1'
                     fill
                     className='rounded-md object-fill'
+                    sizes='105px'
                 />
             </div>
 
