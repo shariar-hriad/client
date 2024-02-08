@@ -17,7 +17,7 @@ const ProductCard = ({
     price,
 }: ProductCardProps) => {
     return (
-        <div className='overflow-hidden rounded-md bg-[#F4F5F7] shadow-sm'>
+        <div className='overflow-hidden bg-[#F4F5F7] shadow-sm'>
             {/* ========== PRODUCT CARD HEADER START ========== */}
             <div className='relative z-0 overflow-hidden p-0'>
                 {/* PRODUCT IMAGE */}

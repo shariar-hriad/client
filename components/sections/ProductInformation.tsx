@@ -5,6 +5,7 @@ import { Separator } from '@/components/ui/separator'
 import { Facebook, Instagram, Linkedin, Plus, Star } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
+import QuantityInput from '../shared/QuantityInput'
 
 const ProductInformation = () => {
     const [selectedColor, setSelectedColor] = useState<string>('')
@@ -97,6 +98,7 @@ const ProductInformation = () => {
 
             {/* ACTION BUTTONS */}
             <div className='mb-4 flex items-center gap-2 lg:mb-10'>
+                <QuantityInput />
                 <Button variant='outline'>Add To Cart</Button>
                 <Button variant='secondary' className='gap-3'>
                     <Plus className='h-5 w-5' /> Compare
@@ -106,43 +108,48 @@ const ProductInformation = () => {
             <Separator />
 
             <div className='mt-4 lg:mt-10'>
-                <div className='flex items-center text-base text-[#9F9F9F]'>
-                    <span className='w-[100px]'>Sku</span>
-                    <span>: &nbsp;SS001</span>
-                </div>
+                <span className='block text-lg font-medium text-black'>
+                    SKU:
+                    <span className='mx-1 inline-block font-normal text-gray-500'>
+                        SS005
+                    </span>
+                </span>
+                <span className='block text-lg font-medium text-black'>
+                    Category:
+                    <span className='mx-1 inline-block font-normal text-gray-500'>
+                        Sofas
+                    </span>
+                </span>
 
-                <div className='flex items-center text-base text-[#9F9F9F]'>
-                    <span className='w-[100px]'>Category</span>
-                    <span>: &nbsp;Sofas</span>
-                </div>
+                <span className='block text-lg font-medium text-black'>
+                    Tags:
+                    <span className='mx-1 inline-block font-normal text-gray-500'>
+                        Sofa, Chair, Home, Shop
+                    </span>
+                </span>
+            </div>
 
-                <div className='flex items-center text-base text-[#9F9F9F]'>
-                    <span className='w-[100px]'>Tags</span>
-                    <span>: &nbsp;Sofa, Chair, Home, Shop</span>
-                </div>
+            <div className='flex items-center text-base text-[#9F9F9F]'>
+                <span className='text-lg font-medium text-black'>Share:</span>
+                <ul className='mx-1 inline-flex items-center gap-3'>
+                    <li>
+                        <Link href='facebook.com'>
+                            <Facebook className='w-4 text-black' />
+                        </Link>
+                    </li>
 
-                <div className='flex items-center text-base text-[#9F9F9F]'>
-                    <span className='w-[100px]'>Share</span>: &nbsp;
-                    <ul className='inline-flex items-center gap-3'>
-                        <li>
-                            <Link href='facebook.com'>
-                                <Facebook className='w-4 text-black' />
-                            </Link>
-                        </li>
+                    <li>
+                        <Link href='facebook.com'>
+                            <Linkedin className='w-4 text-black' />
+                        </Link>
+                    </li>
 
-                        <li>
-                            <Link href='facebook.com'>
-                                <Linkedin className='w-4 text-black' />
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link href='facebook.com'>
-                                <Instagram className='w-4 text-black' />
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
+                    <li>
+                        <Link href='facebook.com'>
+                            <Instagram className='w-4 text-black' />
+                        </Link>
+                    </li>
+                </ul>
             </div>
         </div>
     )

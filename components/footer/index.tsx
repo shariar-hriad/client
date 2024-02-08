@@ -1,7 +1,8 @@
-import { headerLinks, footerLinks } from '@/constants';
-import Image from 'next/image';
-import Link from 'next/link';
-import Newsletter from './Newsletter';
+import { footerLinks, headerLinks } from '@/constants'
+import Image from 'next/image'
+import Link from 'next/link'
+import { buttonVariants } from '../ui/button'
+import Newsletter from './Newsletter'
 
 const index = () => {
     return (
@@ -58,10 +59,18 @@ const index = () => {
                 </div>
             </div>
             <div className='container border-t pt-5'>
-                <p className=''>&copy; furino. All rights reversed</p>
+                <p className='text-center'>
+                    &copy; Furino. All rights reversed.
+                    <Link
+                        className={buttonVariants({ variant: 'link' })}
+                        href='https://www.facebook.com/shariar.hriad'
+                    >
+                        Shariar Hossain Riad
+                    </Link>
+                </p>
             </div>
         </footer>
-    );
-};
+    )
+}
 
-export default index;
+export default index

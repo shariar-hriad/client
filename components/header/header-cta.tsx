@@ -1,7 +1,8 @@
 import { Heart, UserX } from 'lucide-react'
+import Link from 'next/link'
 import { FC } from 'react'
 import Cart from '../Cart'
-import { Button } from '../ui/button'
+import { Button, buttonVariants } from '../ui/button'
 import MobileMenu from './mobile-menu'
 import SearchBar from './searchbar'
 
@@ -18,9 +19,15 @@ const HeaderCta: FC<{}> = () => {
                     <SearchBar />
                 </li>
                 <li>
-                    <Button size='icon' variant='outline'>
+                    <Link
+                        className={buttonVariants({
+                            variant: 'outline',
+                            size: 'icon',
+                        })}
+                        href='/wishlist'
+                    >
                         <Heart className='h-5 w-5 text-primary' />
-                    </Button>
+                    </Link>
                 </li>
                 <li>
                     <Cart />

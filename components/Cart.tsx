@@ -25,7 +25,9 @@ const Cart = () => {
                 })}
             >
                 <ShoppingBag className='h-5 w-5 text-primary' />
-                <Badge className='absolute -right-3 -top-3'>3</Badge>
+                <Badge className='absolute -right-3 -top-3 bg-black text-white'>
+                    3
+                </Badge>
             </SheetTrigger>
 
             <SheetContent>

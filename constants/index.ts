@@ -21,7 +21,7 @@ export const headerLinks = [
     },
     {
         id: 5,
-        route: '/auth',
+        route: '/authentication',
         name: 'Login / Sign Up',
     },
 ]

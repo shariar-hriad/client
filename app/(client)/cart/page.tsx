@@ -1,5 +1,5 @@
 import CartTable from '@/components/CartTable'
-import { PageHeader, Stack } from '@/components/shared'
+import { PageHeader, Stack, Support } from '@/components/shared'
 import { buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
 
@@ -53,6 +53,7 @@ const page = () => {
                     </div>
                 </div>
             </section>
+            <Support />
         </>
     )
 }

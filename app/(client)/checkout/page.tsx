@@ -1,11 +1,12 @@
 import { Checkout } from '@/components/sections'
-import { PageHeader } from '@/components/shared'
+import { PageHeader, Support } from '@/components/shared'
 
 const page = () => {
     return (
         <>
             <PageHeader title='Checkout' />
             <Checkout />
+            <Support />
         </>
     )
 }

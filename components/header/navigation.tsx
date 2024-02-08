@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/navigation-menu'
 import { headerLinks } from '@/constants'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -49,14 +50,19 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export function Navigation() {
+    const segments = usePathname()
+    const activeSegment = headerLinks.map((link) => link.route === segments)
+
     return (
         <NavigationMenu className='hidden lg:block'>
             <NavigationMenuList>
-                {headerLinks.map((link) => (
+                {headerLinks.map((link, index) => (
                     <NavigationMenuItem key={link.id}>
                         <Link href={link.route} legacyBehavior passHref>
                             <NavigationMenuLink
-                                className={navigationMenuTriggerStyle()}
+                                className={`${navigationMenuTriggerStyle({})} ${
+                                    activeSegment[index] ? 'text-green-700' : ''
+                                }`}
                             >
                                 {link.name}
                             </NavigationMenuLink>

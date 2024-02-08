@@ -39,7 +39,7 @@ const ContactForm: FC = () => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-3'>
+            <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
                 <TextInputField
                     form={form}
                     label='Name'
@@ -74,7 +74,13 @@ const ContactForm: FC = () => {
                         </FormItem>
                     )}
                 />
-                <Button type='submit'>Send</Button>
+                <Button
+                    className='lg:px-10'
+                    variant='destructive'
+                    type='submit'
+                >
+                    Send
+                </Button>
             </form>
         </Form>
     )
